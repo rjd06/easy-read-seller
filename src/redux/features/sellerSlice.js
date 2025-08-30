@@ -29,9 +29,11 @@ const initialState = {
     loading: false,
     error: null
 };
+
+
 const sellerSlice = createSlice({
     name: "seller",
-
+initialState,
     reducers: {
 
     },
@@ -39,5 +41,8 @@ const sellerSlice = createSlice({
 
     }
 });
+
+export const {logout} = sellerSlice.actions;
+export default sellerSlice.reducer;
 
 
