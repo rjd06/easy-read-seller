@@ -42,8 +42,11 @@ const sellerSlice = createSlice({
             localStorage.removeItem("seller");
         }
     },
-    extraReducers: {
-
+    extraReducers: (builder) => {
+        builder.addCase(loginSeller.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+        })
     }
 });
 
