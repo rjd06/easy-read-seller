@@ -61,7 +61,9 @@ const sellerSlice = createSlice({
                 state.error = null;
             })
             .addCase(registerSeller.fulfilled, (state, action)=>{
-                
+                state.loading = false;
+                state.seller = action.payload;
+                state.token = action.payload.token;
             })
     }
 });
