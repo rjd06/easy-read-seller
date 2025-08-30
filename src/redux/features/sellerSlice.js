@@ -5,6 +5,7 @@ export const loginSeller = createAsyncThunk("seller/login", async ({ email, pass
     try {
         const { data } = await api.post("/seller/login", { email, password });
         localStorage.setItem("token", data.token);
+        localStorage.setItem("seller", data);
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Login Failed");
@@ -15,13 +16,19 @@ export const registerSeller = createAsyncThunk("seller/register", async (formDat
     try {
         const { data } = await api.post("/seller/register", formData);
         localStorage.setItem("token", data.token);
+        localStorage.setItem("seller", data);
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Register Failed");
     }
 })
 
-
+const initialState = {
+    seller: JSON.parse(localStorage.getItem("seller")) || null,
+    token: localStorage.getItem("token") || null,
+    loading: false,
+    error: null
+};
 const sellerSlice = createSlice({
     name: "seller",
 
