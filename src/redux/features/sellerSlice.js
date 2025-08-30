@@ -5,7 +5,7 @@ export const loginSeller = createAsyncThunk("seller/login", async ({ email, pass
     try {
         const { data } = await api.post("/seller/login", { email, password });
         localStorage.setItem("token", data.token);
-        localStorage.setItem("seller",JSON.stringify(data));
+        localStorage.setItem("seller", JSON.stringify(data));
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Login Failed");
@@ -16,7 +16,7 @@ export const registerSeller = createAsyncThunk("seller/register", async (formDat
     try {
         const { data } = await api.post("/seller/register", formData);
         localStorage.setItem("token", data.token);
-        localStorage.setItem("seller",JSON.stringify(data));
+        localStorage.setItem("seller", JSON.stringify(data));
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Register Failed");
@@ -47,11 +47,15 @@ const sellerSlice = createSlice({
             state.loading = true;
             state.error = null;
         })
-        .addCase(loginSeller.fulfilled, (state, action)=>{
-            state.loading = false;
-            state.seller = action.payload;
-            state.token = action.payload.token;
-        })
+            .addCase(loginSeller.fulfilled, (state, action) => {
+                state.loading = false;
+                state.seller = action.payload;
+                state.token = action.payload.token;
+            })
+            .addCase(loginSeller.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
     }
 });
 
