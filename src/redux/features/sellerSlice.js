@@ -33,16 +33,21 @@ const initialState = {
 
 const sellerSlice = createSlice({
     name: "seller",
-initialState,
+    initialState,
     reducers: {
-
+        logout: (state) => {
+            state.token = null;
+            state.seller = null;
+            localStorage.removeItem("token");
+            localStorage.removeItem("seller");
+        }
     },
     extraReducers: {
 
     }
 });
 
-export const {logout} = sellerSlice.actions;
+export const { logout } = sellerSlice.actions;
 export default sellerSlice.reducer;
 
 
