@@ -65,6 +65,10 @@ const sellerSlice = createSlice({
                 state.seller = action.payload;
                 state.token = action.payload.token;
             })
+            .addCase(registerSeller.rejected, (state, action)=>{
+                state.loading = false;
+                state.error = action.payload;
+            })
     }
 });
 
