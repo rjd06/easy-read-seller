@@ -11,6 +11,17 @@ export const loginSeller = createAsyncThunk("seller/login", async ({ email, pass
     }
 });
 
+export const registerSeller = createAsyncThunk("seller/register", async (formData, { rejectWithValue }) => {
+    try {
+        const { data } = await api.post("/seller/register", formData);
+        localStorage.setItem("token", data.token);
+        return data;
+    } catch (error) {
+        return rejectWithValue(error.response?.data?.message || "Register Failed");
+    }
+})
+
+
 const sellerSlice = createSlice({
     name: "seller",
 
