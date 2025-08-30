@@ -56,6 +56,13 @@ const sellerSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload;
             })
+            .addCase(registerSeller.pending, (state)=>{
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(registerSeller.fulfilled, (state, action)=>{
+                
+            })
     }
 });
 
