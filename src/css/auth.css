@@ -141,8 +141,11 @@ transition:  all .3s ease;
     }
     .auth-form form{
         width: 100%;
+       height: auto;
+
     }
     .auth-form button{
         margin-top: .5rem;
     }
 }
+
