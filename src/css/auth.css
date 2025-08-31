@@ -73,19 +73,7 @@
     text-align: center;
 }
 
-.auth-form .error {
-    padding: .7rem .5rem;
-    background-color: #c365656c;
-    margin: .5rem 0;
-    margin-top: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid #c1354d;
-    font-size: 14px;
-    position: absolute;
-    top: 20px;
-    width: 90%;
-}
+
 
 .auth-form input {
     width: 100%;
@@ -149,5 +137,12 @@ transition:  all .3s ease;
     }
     .auth-form{
         width: 100%;
+        padding: 2rem 1rem;
+    }
+    .auth-form form{
+        width: 100%;
+    }
+    .auth-form button{
+        margin-top: .5rem;
     }
 }
