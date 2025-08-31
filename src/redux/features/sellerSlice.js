@@ -70,6 +70,7 @@ const sellerSlice = createSlice({
             .addCase(registerSeller.rejected, (state, action)=>{
                 state.loading = false;
                 state.error = action.payload;
+                toast.warn(action.payload);
             })
     }
 });
