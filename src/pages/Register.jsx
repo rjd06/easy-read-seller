@@ -22,7 +22,7 @@ const Register = () => {
         const {name, value} = e.target;
         setForm({...form, [name]:value});
     };
-    
+
     // handleSubmit
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -70,17 +70,23 @@ const Register = () => {
                     <div className="form-body">
 
 
-                        <div className="form-img">
-                                <img src="https://www.aceinfoway.com/blog/wp-content/uploads/2020/06/The-Return-of-Froogle-Robinhood-of-Google-Shopping-1.gif" alt="" />
-                            </div>
-
+                       
                         <div className="form-control">
 
-                            <input type="email" placeholder='Enter Email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                            <input type="text" placeholder='Enter Fullname' value={form.name} onChange={handleChange} />
                         </div>
                         <div className="form-control">
 
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Password' />
+                            <input type="text" placeholder='Enter Store Name' value={form.storeName} onChange={handleChange} />
+                        </div>
+                        <div className="form-control">
+
+                            <input type="email" placeholder='Enter Email' value={form.email} onChange={handleChange} />
+                        </div>
+
+                        <div className="form-control">
+
+                            <input type="password" value={form.password} onChange={handleChange} placeholder='Enter Password' />
                         </div>
                         <div className="form-actions">
                             <button>
