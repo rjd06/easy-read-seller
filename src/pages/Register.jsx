@@ -73,7 +73,7 @@ const Register = () => {
                        
                         <div className="form-control">
 
-                            <input type="text" name='name' placeholder='Enter Fullname' value={form.name} onChange={handleChange} />
+                            <input type="text" name='name' placeholder='Enter Full Name' value={form.name} onChange={handleChange} />
                         </div>
                         <div className="form-control">
 
@@ -100,7 +100,7 @@ const Register = () => {
                                 }
                             </button>
                             <p className="switchText">
-                                Already have account? <span onClick={() => navigate("/login")}>Login</span>
+                                Already have account? <span onClick={() => navigate("/")}>Login</span>
                             </p>
                         </div>
                     </div>

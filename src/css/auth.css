@@ -54,7 +54,7 @@
 .auth-form .form-header {
     padding: 1.5rem 1rem;
     color: #fff;
-          background-image: linear-gradient(135deg, pink, purple);
+          background-image: linear-gradient(135deg, purple, pink);
 }
 
 .auth-form .form-body {
@@ -98,8 +98,7 @@ transition:  all .3s ease;
     cursor: pointer;
 }
 .auth-form button:hover{
-    background-color: #c1354d; 
-    background-image: linear-gradient(135deg,pink,  purple, pink);
+    background-color: rgb(170, 46, 170);
 
 }
 
