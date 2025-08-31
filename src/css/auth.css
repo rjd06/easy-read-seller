@@ -129,3 +129,25 @@ transition:  all .3s ease;
 .auth-form span:hover{
     color: #b33a4e;
 }
+
+@media  screen and (max-width:768px) {
+    .auth{
+        flex-direction: column;
+    }
+    .auth-text{
+        width: 100%;
+    }
+    .auth-text .auth-text-content{
+        width: 100%;
+        padding: 2rem;
+    }
+    .auth-text h1{
+        font-size: 2rem;
+    }
+    .auth-text p{
+        font-size: 14px;
+    }
+    .auth-form{
+        width: 100%;
+    }
+}
