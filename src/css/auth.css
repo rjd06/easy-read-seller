@@ -1,37 +1,120 @@
-.auth{
+.auth {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
-.auth-text{
+
+.auth-text {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    background-image: linear-gradient(135deg,pink, purple);
+    background-image: linear-gradient(135deg, pink, purple);
 }
-.auth-text .auth-text-content{
+
+.auth-text .auth-text-content {
     width: 50%;
 }
-.auth-text h1{
+
+.auth-text h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
-.auth-text p{
+
+.auth-text p {
     /* font-size: 14px; */
     margin: .5rem 0;
 }
-.auth-form{
+
+.auth-form {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f1f1f1;
     color: #c1354d;
+    box-shadow: inset 0 5px 150px #c365656c;
+
 }
-.auth-form form{
+
+.auth-form form {
     background-color: #fff;
-    padding: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 150px #c365656c;
+    width: 50%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.auth-form .form-header {
+    padding: 1.5rem 1rem;
+    color: #fff;
+          background-image: linear-gradient(135deg, pink, purple);
+}
+
+.auth-form .form-body {
+    padding: 2rem 1rem 2rem;
+}
+
+.auth-form h2 {
+    text-align: center;
+}
+
+.auth-form .error {
+    padding: .7rem .5rem;
+    background-color: #c365656c;
+    margin: .5rem 0;
+    margin-top: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #c1354d;
+    font-size: 14px;
+}
+
+.auth-form input {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    margin: .25rem 0;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #777;
+}
+.auth-form button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+       background-color: purple;
+
+transition:  all .3s ease;
+    color: #fff;
+    cursor: pointer;
+}
+.auth-form button:hover{
+    background-color: #c1354d; 
+    background-image: linear-gradient(135deg,pink,  purple, pink);
+
+}
+
+.auth-form .switchText{
+    font-size: 14px;
+    padding: .5rem;
+    text-align: center;
+    color: #555;
+}
+.auth-form span{
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: .5rem;
+}
+.auth-form span:hover{
+    color: #b33a4e;
 }

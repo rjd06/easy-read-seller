@@ -46,7 +46,7 @@ const Login = () => {
             <div className="auth-form">
                 <form onSubmit={handleSubmit} >
                     <div className="form-header">
-                        <h2>Welcome Back</h2>
+                        <h2>Seller Login</h2>
                     </div>
 
                     <div className="form-body">
@@ -58,7 +58,7 @@ const Login = () => {
 
                         <div className="form-control">
 
-                            <input type="text" placeholder='Enter Email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                            <input type="email" placeholder='Enter Email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
                         </div>
                         <div className="form-control">
 
