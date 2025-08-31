@@ -58,9 +58,17 @@
 }
 
 .auth-form .form-body {
-    padding: 2rem 1rem 2rem;
+    padding: 1rem 1rem 2rem;
+    position: relative;
 }
-
+.form-body .form-img{
+    text-align: center;
+    width: 100%;
+}
+.form-img img{
+    width: 100%;
+    object-fit: cover;
+}
 .auth-form h2 {
     text-align: center;
 }
@@ -74,6 +82,9 @@
     text-align: center;
     border: 1px solid #c1354d;
     font-size: 14px;
+    position: absolute;
+    top: 20px;
+    width: 90%;
 }
 
 .auth-form input {

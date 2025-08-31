@@ -50,11 +50,11 @@ const Login = () => {
                     </div>
 
                     <div className="form-body">
-                        {
-                            error && <div className="error">
-                                <p>{error}</p>
-                            </div>
-                        }
+
+                        <div className="form-img">
+                            <img src="https://www.aceinfoway.com/blog/wp-content/uploads/2020/06/The-Return-of-Froogle-Robinhood-of-Google-Shopping-1.gif" alt="" />
+                        </div>
+                        {error && <p className='error'>{error}</p>}
 
                         <div className="form-control">
 
