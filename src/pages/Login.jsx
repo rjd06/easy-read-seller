@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { loginSeller } from '../redux/features/sellerSlice';
-
+import { toast } from 'react-toastify';
+import "../css/auth.css"
 
 const Login = () => {
     const { error, loading } = useSelector((state) => state.seller);
@@ -18,15 +19,17 @@ const Login = () => {
 
         console.log(email, password);
         if (!email) {
-            console.log("email is required");
+            // console.log("email is required");
+            toast.warn("Email is required");
             return;
         };
         if (!password) {
-            console.log("password is required");
+            // console.log("password is required");
+            toast.warn("Password is required");
             return;
         };
 
-        dispatch(loginSeller({email, password}));
+        dispatch(loginSeller({ email, password }));
         console.log(email, password);
     }
 
@@ -34,7 +37,10 @@ const Login = () => {
         <div className='auth'>
             <div className="auth-text">
                 <div className="auth-text-content">
+                    <h2>Welcome Back!</h2>
                     <h1>Partner Panel</h1>
+                    <p>Manage your bookstore, track your sales, and reach more readers with ease.</p>
+                    <p>Log in to access your seller dashboard and continue growing your business.</p>
                 </div>
             </div>
             <div className="auth-form">
@@ -56,7 +62,7 @@ const Login = () => {
                         </div>
                         <div className="form-control">
 
-                            <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Password' />
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Password' />
                         </div>
                         <div className="form-actions">
                             <button>
