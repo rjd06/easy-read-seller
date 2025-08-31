@@ -73,20 +73,20 @@ const Register = () => {
                        
                         <div className="form-control">
 
-                            <input type="text" placeholder='Enter Fullname' value={form.name} onChange={handleChange} />
+                            <input type="text" name='name' placeholder='Enter Fullname' value={form.name} onChange={handleChange} />
                         </div>
                         <div className="form-control">
 
-                            <input type="text" placeholder='Enter Store Name' value={form.storeName} onChange={handleChange} />
+                            <input type="text" name='storeName' placeholder='Enter Store Name' value={form.storeName} onChange={handleChange} />
                         </div>
                         <div className="form-control">
 
-                            <input type="email" placeholder='Enter Email' value={form.email} onChange={handleChange} />
+                            <input type="email" name='email' placeholder='Enter Email' value={form.email} onChange={handleChange} />
                         </div>
 
                         <div className="form-control">
 
-                            <input type="password" value={form.password} onChange={handleChange} placeholder='Enter Password' />
+                            <input type="password" name='password' value={form.password} onChange={handleChange} placeholder='Enter Password' />
                         </div>
                         <div className="form-actions">
                             <button>
@@ -94,13 +94,13 @@ const Register = () => {
                                     loading ? (
                                         <div className="loading-text">
                                             <div className="spinner"></div>
-                                            <p>Logging In...</p>
+                                            <p>Registering...</p>
                                         </div>
-                                    ) : ("Login")
+                                    ) : ("Register")
                                 }
                             </button>
                             <p className="switchText">
-                                Create a new account <span onClick={() => navigate("/register")}>Register</span>
+                                Already have account? <span onClick={() => navigate("/login")}>Login</span>
                             </p>
                         </div>
                     </div>
