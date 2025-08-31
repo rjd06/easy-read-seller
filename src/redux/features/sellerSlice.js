@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../../api";
+import { toast } from "react-toastify";
 
 export const loginSeller = createAsyncThunk("seller/login", async ({ email, password }, { rejectWithValue }) => {
     try {
@@ -55,6 +56,7 @@ const sellerSlice = createSlice({
             .addCase(loginSeller.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
+                toast.warn(action.payload);
             })
             .addCase(registerSeller.pending, (state)=>{
                 state.loading = true;

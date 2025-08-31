@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import "../css/auth.css"
 
 const Login = () => {
-    const { error, loading } = useSelector((state) => state.seller);
+    const { loading } = useSelector((state) => state.seller);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -51,10 +51,10 @@ const Login = () => {
 
                     <div className="form-body">
 
+
                         <div className="form-img">
-                            <img src="https://www.aceinfoway.com/blog/wp-content/uploads/2020/06/The-Return-of-Froogle-Robinhood-of-Google-Shopping-1.gif" alt="" />
-                        </div>
-                        {error && <p className='error'>{error}</p>}
+                                <img src="https://www.aceinfoway.com/blog/wp-content/uploads/2020/06/The-Return-of-Froogle-Robinhood-of-Google-Shopping-1.gif" alt="" />
+                            </div>
 
                         <div className="form-control">
 
