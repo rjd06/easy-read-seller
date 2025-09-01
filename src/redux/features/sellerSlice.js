@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 export const loginSeller = createAsyncThunk("seller/login", async ({ email, password }, { rejectWithValue }) => {
     try {
-        const { data } = await api.post("/seller/login", { email, password });
+        const { data } = await api.post("/auth/seller/login", { email, password });
         localStorage.setItem("token", data.token);
         localStorage.setItem("seller", JSON.stringify(data));
         return data;
@@ -15,7 +15,7 @@ export const loginSeller = createAsyncThunk("seller/login", async ({ email, pass
 
 export const registerSeller = createAsyncThunk("seller/register", async (formData, { rejectWithValue }) => {
     try {
-        const { data } = await api.post("/seller/register", formData);
+        const { data } = await api.post("/auth/seller/register", formData);
         localStorage.setItem("token", data.token);
         localStorage.setItem("seller", JSON.stringify(data));
         return data;

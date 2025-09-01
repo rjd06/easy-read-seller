@@ -55,10 +55,10 @@ const Register = () => {
         <div className='auth'>
             <div className="auth-text">
                 <div className="auth-text-content">
-                    <h2>Welcome Back!</h2>
-                    <h1>Partner Panel</h1>
-                    <p>Manage your bookstore, track your sales, and reach more readers with ease.</p>
-                    <p>Log in to access your seller dashboard and continue growing your business.</p>
+                    <h2>Register as a Book Seller</h2>
+                    <h1>Start Selling Your Books Today!</h1>
+                    <p>Join our network of book sellers and share your stories with thousands of readers. </p>
+                    <p>Whether you are an author, publisher, or bookstore, our platform helps you showcase your books to the right audience.</p>
                 </div>
             </div>
             <div className="auth-form">
