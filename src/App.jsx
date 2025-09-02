@@ -27,7 +27,8 @@ function App() {
           <Route path='/' element={token ? (<Navigate to="/dashboard" />) : (<Login />)} />
           <Route path='/register' element={token ? (<Navigate to="/dashboard" />) : (<Register />)} />
           <Route path='/dashboard' element={token ? (<Dashboard/>) : (<Login />)}>
-            <Route path='profile' element={<Profile />} />
+            <Route index element={<Profile />} />
+            <Route index path='profile' element={<Profile />} />
             <Route path='settings' element={<Settings />} />
             <Route path='publish_book' element={<PublishBook />} />
             <Route path='delete_book' element={<DeleteBook />} />
