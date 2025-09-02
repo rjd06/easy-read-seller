@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -24,9 +24,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={token ? (<Dashboard />) : (<Login />)} />
-          <Route path='/register' element={token ? (<Dashboard />) : (<Register />)} />
-          <Route path='/dashboard' element={token ? (<Dashboard />) : (<Login />)}>
+          <Route path='/' element={token ? (<Navigate to="/dashboard" />) : (<Login />)} />
+          <Route path='/register' element={token ? (<Navigate to="/dashboard" />) : (<Register />)} />
+          <Route path='/dashboard' element={token ? (<Dashboard/>) : (<Login />)}>
             <Route path='profile' element={<Profile />} />
             <Route path='settings' element={<Settings />} />
             <Route path='publish_book' element={<PublishBook />} />
