@@ -10,15 +10,20 @@ const Dashboard = () => {
       </div>
 
       <div className="dashboard-body">
-        <ul>
-          <li><NavLink to={"my_books"}>Books</NavLink></li>
-          <li><NavLink to={"publish_book"}>Publish Book</NavLink></li>
-          <li><NavLink to={"orders"}>Orders</NavLink></li>
-          <li><NavLink to={"profile"}>Profile</NavLink></li>
-          <li><NavLink to={"settings"}>Settings</NavLink></li>
-        </ul>
+        <nav className='navbar'>
+          <ul>
+            <li><NavLink to={"my_books"}>Books</NavLink></li>
+            <li><NavLink to={"publish_book"}>Publish Book</NavLink></li>
+            <li><NavLink to={"orders"}>Orders</NavLink></li>
+          </ul>
+          <ul>
+            <li><NavLink to={"profile"}>Profile</NavLink></li>
+            <li><NavLink to={"settings"}>Settings</NavLink></li>
+          </ul>
 
-        <main>
+        </nav>
+
+        <main className='dashboard-content'>
           <Outlet />
         </main>
       </div>
