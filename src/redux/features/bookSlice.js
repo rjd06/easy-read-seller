@@ -79,54 +79,69 @@ const bookSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchBooks.fulfilled, (state , action)=>{
+            .addCase(fetchBooks.fulfilled, (state, action) => {
                 state.loading = false;
                 state.books = action.payload;
             })
-            .addCase(fetchBooks.rejected, (state, action)=>{
+            .addCase(fetchBooks.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })
             // get book by id
-            .addCase(fetchBookById.pending, (state)=>{
+            .addCase(fetchBookById.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchBookById.fulfilled, (state, action)=>{
+            .addCase(fetchBookById.fulfilled, (state, action) => {
                 state.loading = false;
                 state.book = action.payload;
             })
-            .addCase(fetchBookById.rejected, (state, action)=>{
+            .addCase(fetchBookById.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })
 
             // create book
-            .addCase(createBook.pending, (state)=>{
+            .addCase(createBook.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(createBook.fulfilled, (state, action)=>{
+            .addCase(createBook.fulfilled, (state, action) => {
                 state.loading = false;
                 state.success = true;
                 state.books.push(action.payload);
             })
-            .addCase(createBook.rejected, (state, action)=>{
+            .addCase(createBook.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             })
 
             // update book
-            .addCase(updateBook.pending, (state)=>{
+            .addCase(updateBook.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(updateBook.fulfilled, (state, action)=>{
+            .addCase(updateBook.fulfilled, (state, action) => {
                 state.loading = false;
                 state.success = true;
-                state.books = state.books.map((book)=>book._id === action.payload._id ? action.payload : book);
+                state.books = state.books.map((book) => book._id === action.payload._id ? action.payload : book);
             })
-            .addCase(updateBook.rejected, (state, action)=>{
+            .addCase(updateBook.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+
+            // delete book
+            .addCase(deleteBook.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(deleteBook.fulfilled, (state, action) => {
+                state.loading = false;
+                state.success = true;
+                state.books = state.books.filter((book) => book._id !== action.payload._id);
+            })
+            .addCase(deleteBook.rejected, (state, action)=>{
                 state.loading = false;
                 state.error = action.payload;
             })
