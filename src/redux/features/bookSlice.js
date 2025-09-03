@@ -100,6 +100,21 @@ const bookSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload;
             })
+
+            // create book
+            .addCase(createBook.pending, (state)=>{
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(createBook.fulfilled, (state, action)=>{
+                state.loading = false;
+                state.success = true;
+                state.books.push(action.payload);
+            })
+            .addCase(createBook.rejected, (state, action)=>{
+                state.loading = false;
+                state.error = action.payload;
+            })
     }
 });
 
