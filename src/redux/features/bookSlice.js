@@ -115,6 +115,21 @@ const bookSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload;
             })
+
+            // update book
+            .addCase(updateBook.pending, (state)=>{
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(updateBook.fulfilled, (state, action)=>{
+                state.loading = false;
+                state.success = true;
+                state.books = state.books.map((book)=>book._id === action.payload._id ? action.payload : book);
+            })
+            .addCase(updateBook.rejected, (state, action)=>{
+                state.loading = false;
+                state.error = action.payload;
+            })
     }
 });
 
