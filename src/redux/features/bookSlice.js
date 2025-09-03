@@ -71,9 +71,25 @@ const bookSlice = createSlice({
             state.error = null;
             state.success = false;
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            // get all books
+            .addCase(fetchBooks.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchBooks.fulfilled, (state , action)=>{
+                state.loading = false;
+                state.books = action.payload;
+            })
+            .addCase(fetchBooks.rejected, (state, action)=>{
+                state.loading = false;
+                state.error = action.payload;
+            })
     }
 });
 
 
-export const {resetBookStore} = bookSlice.actions;
+export const { resetBookStore } = bookSlice.actions;
 export default bookSlice.reducer;
