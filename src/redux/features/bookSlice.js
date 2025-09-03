@@ -13,9 +13,9 @@ export const fetchBooks = createAsyncThunk("books/fetchbooks", async (_, { rejec
 
 
 // get book by id
-export const fetchBookById = createAsyncThunk("books/fetchBookById", async(id , {rejectWithValue})=>{
+export const fetchBookById = createAsyncThunk("books/fetchBookById", async (id, { rejectWithValue }) => {
     try {
-        const {data} = api.get(`books/${id}`);
+        const { data } = api.get(`books/${id}`);
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Failed to fetch book");
@@ -24,9 +24,9 @@ export const fetchBookById = createAsyncThunk("books/fetchBookById", async(id , 
 
 
 // create new book
-export const createBook = createAsyncThunk("books/createBook", async(bookData, {rejectWithValue})=>{
+export const createBook = createAsyncThunk("books/createBook", async (bookData, { rejectWithValue }) => {
     try {
-        const {data }= api.post("/books", bookData, {withCredentials: true});
+        const { data } = api.post("/books", bookData, { withCredentials: true });
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Failed to create book");
@@ -35,9 +35,9 @@ export const createBook = createAsyncThunk("books/createBook", async(bookData, {
 
 
 // update a book by id
-export const updateBook = createAsyncThunk("books/updateBook", async(id, bookData, {rejectWithValue})=>{
+export const updateBook = createAsyncThunk("books/updateBook", async (id, bookData, { rejectWithValue }) => {
     try {
-        const {data} = api.put(`/books/${id}`, bookData, {withCredentials:true});
+        const { data } = api.put(`/books/${id}`, bookData, { withCredentials: true });
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Failed to update book");
@@ -46,11 +46,34 @@ export const updateBook = createAsyncThunk("books/updateBook", async(id, bookDat
 
 
 // delete a book by id
-export const deleteBook = createAsyncThunk("books/deleteBook", async(id, {rejectWithValue})=>{
+export const deleteBook = createAsyncThunk("books/deleteBook", async (id, { rejectWithValue }) => {
     try {
-        const {data} = api.delete(`/books/${id}`, {withCredentials:true});
+        const { data } = api.delete(`/books/${id}`, { withCredentials: true });
         return data;
     } catch (error) {
         return rejectWithValue(error.response?.data?.message || "Failed to delete book");
     }
-})
+});
+
+
+// Slice
+const bookSlice = createSlice({
+    name: "book",
+    initialState: {
+        books: [],
+        book: null,
+        loading: false,
+        error: null,
+        success: false,
+    },
+    reducers: {
+        resetBookStore: (state) => {
+            state.error = null;
+            state.success = false;
+        }
+    }
+});
+
+
+export const {resetBookStore} = bookSlice.actions;
+export default bookSlice.reducer;
