@@ -24,5 +24,13 @@ export const fetchBookById = createAsyncThunk("books/fetchBookById", async(id , 
 
 
 // create new book
+export const createBook = createAsyncThunk("books/createBook", async(bookData, {rejectWithValue})=>{
+    try {
+        const {data }= api.post("/books", bookData, {withCredentials: true});
+        return data;
+    } catch (error) {
+        return rejectWithValue(error.response?.data?.message || "Failed to create book");
+    }
+})
 // update a book by id
 // delete a book by id
