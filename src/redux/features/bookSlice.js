@@ -13,6 +13,16 @@ export const fetchBooks = createAsyncThunk("books/fetchbooks", async (_, { rejec
 
 
 // get book by id
+export const fetchBookById = createAsyncThunk("books/fetchBookById", async(id , {rejectWithValue})=>{
+    try {
+        const {data} = api.get(`books/${id}`);
+        return data;
+    } catch (error) {
+        return rejectWithValue(error.response?.data?.message || "Failed to fetch book");
+    }
+});
+
+
 // create new book
 // update a book by id
 // delete a book by id
