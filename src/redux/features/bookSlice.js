@@ -87,6 +87,19 @@ const bookSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload;
             })
+            // get book by id
+            .addCase(fetchBookById.pending, (state)=>{
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(fetchBookById.fulfilled, (state, action)=>{
+                state.loading = false;
+                state.book = action.payload;
+            })
+            .addCase(fetchBookById.rejected, (state, action)=>{
+                state.loading = false;
+                state.error = action.payload;
+            })
     }
 });
 
