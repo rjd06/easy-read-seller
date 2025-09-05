@@ -13,12 +13,12 @@ const PublishBook = () => {
         <div className="form-body">
 
           <div className="form-group">
-            <label className="form-label">Book Title</label>
+            <label className="form-label">Book Title :</label>
             <input type="text" className="form-input" placeholder="Enter Book Title" />
           </div>
 
           <div class="form-group">
-            <label for="bookCategory">Select Book Category</label>
+            <label for="bookCategory">Select Book Category :</label>
             <select class="form-control" id="bookCategory" name="category">
               <option value="">-- Choose a Category --</option>
               <option value="fiction">Fiction</option>
@@ -50,29 +50,34 @@ const PublishBook = () => {
           </div>
 
           <div className="form-group">
-            <label className="form-label">Author</label>
+            <label className="form-label">Author :</label>
             <input type="text" className="form-input" placeholder="Enter Author Name" />
           </div>
 
           <div className="form-group">
-            <label className="form-label">Price</label>
+            <label className="form-label">Price :</label>
             <input type="text" className="form-input" placeholder="Enter Book Price" />
           </div>
           <div className="form-group">
-            <label className="form-label">Stock</label>
+            <label className="form-label">Stock :</label>
             <input type="text" className="form-input" placeholder="Enter Book Stock" />
           </div>
 
+
+
           <div className="form-group">
-            <label className="form-label">Description</label>
+            <label className="form-label">Upload Book Cover :</label>
+            <input type="file" className="form-input" />
+          </div>
+          
+          <div className="form-group">
+            <label className="form-label">Description :</label>
             <textarea className="form-input" placeholder="Enter Book Description"></textarea>
           </div>
 
-          <div className="form-group">
-            <label className="form-label">Upload Book Cover</label>
-            <input type="file" className="form-input" />
-          </div>
+        </div>
 
+        <div className="form-footer">
           <div className="form-btns">
             <button type='submit'>Publish</button>
           </div>
