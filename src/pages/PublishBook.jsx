@@ -7,7 +7,7 @@ const PublishBook = () => {
 
       <form className="publish-book-form">
         <div className="form-header">
-          <h3>Publish A New Book </h3>
+          <h2>Publish A New Book </h2>
         </div>
 
         <div className="form-body">
@@ -69,7 +69,7 @@ const PublishBook = () => {
             <label className="form-label">Upload Book Cover :</label>
             <input type="file" className="form-input" />
           </div>
-          
+
           <div className="form-group">
             <label className="form-label">Description :</label>
             <textarea className="form-input" placeholder="Enter Book Description"></textarea>

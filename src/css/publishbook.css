@@ -24,6 +24,7 @@
 }
 .form-group textarea{
     height: 180px;
+    resize: none;
 }
 .form-footer{
     text-align: end;

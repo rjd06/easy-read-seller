@@ -1,18 +1,19 @@
 /* ===== Modern Business Theme ===== */
 
 .dashboard {
-    background-color: #F5F7FA; 
+    background-color: #F5F7FA;
     width: 100%;
     height: 100vh;
-    color: #111827; 
+    color: #111827;
 }
 
 
 .dashboard-header {
     padding: 20px;
-    color: #ffffff; 
+    color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #111827;
+    background-color: #113e86;
+
     font-weight: 600;
     font-size: 18px;
 }
@@ -25,7 +26,7 @@
 
 .navbar {
     width: 15%;
-    background-color: #1E293B; 
+    background-color: #1E293B;
     min-height: 90vh;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -47,7 +48,7 @@
 
 .navbar a {
     text-decoration: none;
-    color: #F9FAFB; 
+    color: #F9FAFB;
     width: 100%;
     padding: 0.75rem 1rem;
     display: block;
@@ -59,7 +60,7 @@
 .navbar a:hover,
 .navbar a.active {
     background-color: #3B82F6;
-    border-left: 4px solid #2563EB; 
+    border-left: 4px solid #2563EB;
     color: #ffffff;
 }
 
@@ -75,7 +76,7 @@
 
 .dashboard-content {
     width: 85%;
-    background-color: #ffffff; 
+    /* background-color: #ffffff;  */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     padding: 20px;
     border-radius: 6px;
