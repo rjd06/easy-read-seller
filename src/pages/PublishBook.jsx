@@ -11,10 +11,17 @@ const PublishBook = () => {
   const [description, setDescription] = useState("");
 
 
+  // handle form submit
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    
+    console.log(title, category);
+  };
+
   return (
     <div>
 
-      <form className="publish-book-form">
+      <form className="publish-book-form" onSubmit={handleFormSubmit}>
         <div className="form-header">
           <h2>Publish A New Book </h2>
         </div>
@@ -23,12 +30,12 @@ const PublishBook = () => {
 
           <div className="form-group">
             <label className="form-label">Book Title :</label>
-            <input type="text" className="form-input" placeholder="Enter Book Title" />
+            <input value={title} onChange={(e)=>{setTitle(e.target.value)}} type="text" className="form-input" placeholder="Enter Book Title" />
           </div>
 
           <div class="form-group">
             <label for="bookCategory">Select Book Category :</label>
-            <select class="form-control" id="bookCategory" name="category">
+            <select class="form-control" value={category} onChange={(e)=>{setCategory(e.target.value)}}  id="bookCategory" name="category">
               <option value="">-- Choose a Category --</option>
               <option value="fiction">Fiction</option>
               <option value="non-fiction">Non-Fiction</option>
@@ -60,16 +67,17 @@ const PublishBook = () => {
 
           <div className="form-group">
             <label className="form-label">Author :</label>
-            <input type="text" className="form-input" placeholder="Enter Author Name" />
+            <input value={author} onChange={(e)=>{setAuthor(e.target.value)}} type="text" className="form-input" placeholder="Enter Author Name" />
           </div>
 
           <div className="form-group">
             <label className="form-label">Price :</label>
-            <input type="text" className="form-input" placeholder="Enter Book Price" />
+            <input type="number" value={price} onChange={(e)=>setPrice(e.target.value)} className="form-input" placeholder="Enter Book Price" />
           </div>
+
           <div className="form-group">
             <label className="form-label">Stock :</label>
-            <input type="text" className="form-input" placeholder="Enter Book Stock" />
+            <input type="number" value={stock} onChange={(e)=>setStock(e.target.value)} className="form-input" placeholder="Enter Book Stock" />
           </div>
 
 
@@ -81,7 +89,7 @@ const PublishBook = () => {
 
           <div className="form-group">
             <label className="form-label">Description :</label>
-            <textarea className="form-input" placeholder="Enter Book Description"></textarea>
+            <textarea value={description} onChange={(e)=>setDescription(e.target.value)} className="form-input" placeholder="Enter Book Description"></textarea>
           </div>
 
         </div>
