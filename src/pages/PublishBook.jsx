@@ -1,10 +1,11 @@
 import React from 'react'
+import "../css/publishbook.css"
 
 const PublishBook = () => {
   return (
     <div>
 
-      <form>
+      <form className="publish-book-form">
         <div className="form-header">
           <h3>Publish A New Book </h3>
         </div>

@@ -1,0 +1,31 @@
+.publish-book-form{
+    max-width: 600px;
+    
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.publish-book-form .form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.publish-book-form h3 {
+    margin: 0;
+    color: #333;
+}
+.publish-book-form .form-group {
+    margin-bottom: 15px;
+}
+.publish-book-form label {
+    display: block;
+    margin-bottom: 5px;
+font-size: 14px;
+}
+.publish-book-form input{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

@@ -4,16 +4,15 @@
     background-color: #F5F7FA; 
     width: 100%;
     height: 100vh;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #111827; 
 }
 
 
 .dashboard-header {
     padding: 20px;
-    background-color: #ffffff; 
+    color: #ffffff; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #111827;
+    background-color: #111827;
     font-weight: 600;
     font-size: 18px;
 }
