@@ -20,7 +20,7 @@ const Dashboard = () => {
             <li><NavLink to={"profile"}>Profile</NavLink></li>
             <li><NavLink to={"settings"}>Settings</NavLink></li>
 
-            <li><p>Parnter Panel Powered By EasiCart</p></li>
+            <li><p>Parnter Panel Powered By BookCart</p></li>
           </ul>
 
         </nav>
